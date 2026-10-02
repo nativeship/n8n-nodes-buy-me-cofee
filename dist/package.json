@@ -1,0 +1,53 @@
+{
+    "author": {
+        "email": "hello@nativeship.io",
+        "name": "Administrator"
+    },
+    "description": "Helps creators receive support, offer memberships, and sell products.",
+    "devDependencies": {
+        "@n8n/node-cli": "0.41.2",
+        "@types/node": "22.15.29",
+        "eslint": "9.29.0",
+        "prettier": "3.6.2",
+        "typescript": "5.9.3"
+    },
+    "engines": {
+        "node": "\u003e=22.22.0"
+    },
+    "files": [
+        "dist"
+    ],
+    "homepage": "https://developers.buymeacoffee.com/api/v1",
+    "keywords": [
+        "n8n-community-node-package",
+        "by-me-cofee",
+        "by-me-cofee-n8n-node",
+        "n8n-nodes",
+        "nativeship-nodes"
+    ],
+    "license": "MIT",
+    "n8n": {
+        "credentials": [
+            "dist/credentials/BuyMeACoffeeApi.credentials.js"
+        ],
+        "n8nNodesApiVersion": 1,
+        "nodes": [
+            "dist/nodes/BuyMeACoffee/BuyMeACoffee.node.js"
+        ],
+        "strict": true
+    },
+    "name": "@nativeship/n8n-nodes-buy-me-cofee",
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "n8n-node build",
+        "dev": "n8n-node dev",
+        "lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix"
+    },
+    "version": "1.0.0"
+}

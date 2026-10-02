@@ -1,0 +1,1424 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "operationId": "getExtraById",
+      "method": "GET",
+      "path": "/extras/{id}",
+      "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": 2,
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "extra",
+            "type": "object"
+          },
+          {
+            "name": "payer_email",
+            "type": "string"
+          },
+          {
+            "name": "payer_name",
+            "type": "string"
+          },
+          {
+            "name": "purchase_amount",
+            "type": "string"
+          },
+          {
+            "name": "purchase_currency",
+            "type": "string"
+          },
+          {
+            "name": "purchase_id",
+            "type": "integer"
+          },
+          {
+            "name": "purchase_is_revoked",
+            "type": "integer"
+          },
+          {
+            "name": "purchase_question",
+            "type": "string"
+          },
+          {
+            "name": "purchase_updated_on",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "purchased_on",
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "simplifiedFields": [
+          "extra",
+          "payer_email",
+          "payer_name",
+          "purchase_amount",
+          "purchase_currency",
+          "purchase_id",
+          "purchase_is_revoked",
+          "purchase_question",
+          "purchase_updated_on",
+          "purchased_on"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Error"
+        },
+        {
+          "status": "401",
+          "title": "Error"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getExtraById",
+        "method": "GET",
+        "path": "/extras/{id}",
+        "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+        "request": {
+          "method": "GET",
+          "url": "=/extras/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "extra",
+              "type": "object"
+            },
+            {
+              "name": "payer_email",
+              "type": "string"
+            },
+            {
+              "name": "payer_name",
+              "type": "string"
+            },
+            {
+              "name": "purchase_amount",
+              "type": "string"
+            },
+            {
+              "name": "purchase_currency",
+              "type": "string"
+            },
+            {
+              "name": "purchase_id",
+              "type": "integer"
+            },
+            {
+              "name": "purchase_is_revoked",
+              "type": "integer"
+            },
+            {
+              "name": "purchase_question",
+              "type": "string"
+            },
+            {
+              "name": "purchase_updated_on",
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "name": "purchased_on",
+              "type": "string",
+              "format": "date-time"
+            }
+          ],
+          "simplifiedFields": [
+            "extra",
+            "payer_email",
+            "payer_name",
+            "purchase_amount",
+            "purchase_currency",
+            "purchase_id",
+            "purchase_is_revoked",
+            "purchase_question",
+            "purchase_updated_on",
+            "purchased_on"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Error"
+          },
+          {
+            "status": "401",
+            "title": "Error"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listExtras",
+      "method": "GET",
+      "path": "/extras",
+      "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "page",
+          "inputName": "page",
+          "sample": 2,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "current_page",
+            "type": "integer"
+          },
+          {
+            "name": "data",
+            "type": "array"
+          },
+          {
+            "name": "first_page_url",
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "type": "integer"
+          },
+          {
+            "name": "last_page",
+            "type": "integer"
+          },
+          {
+            "name": "last_page_url",
+            "type": "string"
+          },
+          {
+            "name": "next_page_url",
+            "type": "string"
+          },
+          {
+            "name": "path",
+            "type": "string"
+          },
+          {
+            "name": "per_page",
+            "type": "integer"
+          },
+          {
+            "name": "prev_page_url",
+            "type": "string"
+          },
+          {
+            "name": "to",
+            "type": "integer"
+          },
+          {
+            "name": "total",
+            "type": "integer"
+          }
+        ],
+        "simplifiedFields": [
+          "current_page",
+          "first_page_url",
+          "from",
+          "last_page",
+          "last_page_url",
+          "next_page_url",
+          "path",
+          "per_page",
+          "prev_page_url",
+          "to"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Error"
+        },
+        {
+          "status": "401",
+          "title": "Error"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listExtras",
+        "method": "GET",
+        "path": "/extras",
+        "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+        "request": {
+          "method": "GET",
+          "url": "=/extras",
+          "query": [
+            {
+              "name": "page",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "current_page",
+              "type": "integer"
+            },
+            {
+              "name": "data",
+              "type": "array"
+            },
+            {
+              "name": "first_page_url",
+              "type": "string"
+            },
+            {
+              "name": "from",
+              "type": "integer"
+            },
+            {
+              "name": "last_page",
+              "type": "integer"
+            },
+            {
+              "name": "last_page_url",
+              "type": "string"
+            },
+            {
+              "name": "next_page_url",
+              "type": "string"
+            },
+            {
+              "name": "path",
+              "type": "string"
+            },
+            {
+              "name": "per_page",
+              "type": "integer"
+            },
+            {
+              "name": "prev_page_url",
+              "type": "string"
+            },
+            {
+              "name": "to",
+              "type": "integer"
+            },
+            {
+              "name": "total",
+              "type": "integer"
+            }
+          ],
+          "simplifiedFields": [
+            "current_page",
+            "first_page_url",
+            "from",
+            "last_page",
+            "last_page_url",
+            "next_page_url",
+            "path",
+            "per_page",
+            "prev_page_url",
+            "to"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Error"
+          },
+          {
+            "status": "401",
+            "title": "Error"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getMemberById",
+      "method": "GET",
+      "path": "/subscriptions/{id}",
+      "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": 2,
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "country",
+            "type": "string"
+          },
+          {
+            "name": "message_visibility",
+            "type": "integer"
+          },
+          {
+            "name": "payer_email",
+            "type": "string"
+          },
+          {
+            "name": "payer_name",
+            "type": "string"
+          },
+          {
+            "name": "referer",
+            "type": "string"
+          },
+          {
+            "name": "subscription_cancelled_on",
+            "type": "string"
+          },
+          {
+            "name": "subscription_coffee_num",
+            "type": "integer"
+          },
+          {
+            "name": "subscription_coffee_price",
+            "type": "string"
+          },
+          {
+            "name": "subscription_created_on",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "subscription_currency",
+            "type": "string"
+          },
+          {
+            "name": "subscription_current_period_end",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "subscription_current_period_start",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "subscription_duration_type",
+            "type": "string"
+          },
+          {
+            "name": "subscription_id",
+            "type": "integer"
+          },
+          {
+            "name": "subscription_is_cancelled",
+            "type": "string"
+          },
+          {
+            "name": "subscription_is_cancelled_at_period_end",
+            "type": "string"
+          },
+          {
+            "name": "subscription_message",
+            "type": "string"
+          },
+          {
+            "name": "subscription_updated_on",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "transaction_id",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "country",
+          "message_visibility",
+          "payer_email",
+          "payer_name",
+          "referer",
+          "subscription_cancelled_on",
+          "subscription_coffee_num",
+          "subscription_coffee_price",
+          "subscription_created_on",
+          "subscription_currency"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Error"
+        },
+        {
+          "status": "401",
+          "title": "Error"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getMemberById",
+        "method": "GET",
+        "path": "/subscriptions/{id}",
+        "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+        "request": {
+          "method": "GET",
+          "url": "=/subscriptions/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "country",
+              "type": "string"
+            },
+            {
+              "name": "message_visibility",
+              "type": "integer"
+            },
+            {
+              "name": "payer_email",
+              "type": "string"
+            },
+            {
+              "name": "payer_name",
+              "type": "string"
+            },
+            {
+              "name": "referer",
+              "type": "string"
+            },
+            {
+              "name": "subscription_cancelled_on",
+              "type": "string"
+            },
+            {
+              "name": "subscription_coffee_num",
+              "type": "integer"
+            },
+            {
+              "name": "subscription_coffee_price",
+              "type": "string"
+            },
+            {
+              "name": "subscription_created_on",
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "name": "subscription_currency",
+              "type": "string"
+            },
+            {
+              "name": "subscription_current_period_end",
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "name": "subscription_current_period_start",
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "name": "subscription_duration_type",
+              "type": "string"
+            },
+            {
+              "name": "subscription_id",
+              "type": "integer"
+            },
+            {
+              "name": "subscription_is_cancelled",
+              "type": "string"
+            },
+            {
+              "name": "subscription_is_cancelled_at_period_end",
+              "type": "string"
+            },
+            {
+              "name": "subscription_message",
+              "type": "string"
+            },
+            {
+              "name": "subscription_updated_on",
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "name": "transaction_id",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "country",
+            "message_visibility",
+            "payer_email",
+            "payer_name",
+            "referer",
+            "subscription_cancelled_on",
+            "subscription_coffee_num",
+            "subscription_coffee_price",
+            "subscription_created_on",
+            "subscription_currency"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Error"
+          },
+          {
+            "status": "401",
+            "title": "Error"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listMembers",
+      "method": "GET",
+      "path": "/subscriptions",
+      "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "status",
+          "inputName": "status",
+          "sample": "all",
+          "enum": [
+            "all",
+            "active",
+            "inactive"
+          ],
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "page",
+          "inputName": "page",
+          "sample": 2,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "current_page",
+            "type": "integer"
+          },
+          {
+            "name": "data",
+            "type": "array"
+          },
+          {
+            "name": "first_page_url",
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "type": "integer"
+          },
+          {
+            "name": "last_page",
+            "type": "integer"
+          },
+          {
+            "name": "last_page_url",
+            "type": "string"
+          },
+          {
+            "name": "next_page_url",
+            "type": "string"
+          },
+          {
+            "name": "path",
+            "type": "string"
+          },
+          {
+            "name": "per_page",
+            "type": "integer"
+          },
+          {
+            "name": "prev_page_url",
+            "type": "string"
+          },
+          {
+            "name": "to",
+            "type": "integer"
+          },
+          {
+            "name": "total",
+            "type": "integer"
+          }
+        ],
+        "simplifiedFields": [
+          "current_page",
+          "first_page_url",
+          "from",
+          "last_page",
+          "last_page_url",
+          "next_page_url",
+          "path",
+          "per_page",
+          "prev_page_url",
+          "to"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Error"
+        },
+        {
+          "status": "401",
+          "title": "Error"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listMembers",
+        "method": "GET",
+        "path": "/subscriptions",
+        "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+        "request": {
+          "method": "GET",
+          "url": "=/subscriptions",
+          "query": [
+            {
+              "name": "status",
+              "source": "additionalFields"
+            },
+            {
+              "name": "page",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "current_page",
+              "type": "integer"
+            },
+            {
+              "name": "data",
+              "type": "array"
+            },
+            {
+              "name": "first_page_url",
+              "type": "string"
+            },
+            {
+              "name": "from",
+              "type": "integer"
+            },
+            {
+              "name": "last_page",
+              "type": "integer"
+            },
+            {
+              "name": "last_page_url",
+              "type": "string"
+            },
+            {
+              "name": "next_page_url",
+              "type": "string"
+            },
+            {
+              "name": "path",
+              "type": "string"
+            },
+            {
+              "name": "per_page",
+              "type": "integer"
+            },
+            {
+              "name": "prev_page_url",
+              "type": "string"
+            },
+            {
+              "name": "to",
+              "type": "integer"
+            },
+            {
+              "name": "total",
+              "type": "integer"
+            }
+          ],
+          "simplifiedFields": [
+            "current_page",
+            "first_page_url",
+            "from",
+            "last_page",
+            "last_page_url",
+            "next_page_url",
+            "path",
+            "per_page",
+            "prev_page_url",
+            "to"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Error"
+          },
+          {
+            "status": "401",
+            "title": "Error"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getSupporterById",
+      "method": "GET",
+      "path": "/supporters/{id}",
+      "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": 2,
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "country",
+            "type": "string"
+          },
+          {
+            "name": "is_refunded",
+            "type": "boolean"
+          },
+          {
+            "name": "payer_email",
+            "type": "string"
+          },
+          {
+            "name": "payer_name",
+            "type": "string"
+          },
+          {
+            "name": "referer",
+            "type": "string"
+          },
+          {
+            "name": "support_coffee_price",
+            "type": "string"
+          },
+          {
+            "name": "support_coffees",
+            "type": "integer"
+          },
+          {
+            "name": "support_created_on",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "support_currency",
+            "type": "string"
+          },
+          {
+            "name": "support_email",
+            "type": "string"
+          },
+          {
+            "name": "support_id",
+            "type": "integer"
+          },
+          {
+            "name": "support_note",
+            "type": "string"
+          },
+          {
+            "name": "support_updated_on",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "support_visibility",
+            "type": "integer"
+          },
+          {
+            "name": "supporter_name",
+            "type": "string"
+          },
+          {
+            "name": "transaction_id",
+            "type": "string"
+          },
+          {
+            "name": "transfer_id",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "country",
+          "is_refunded",
+          "payer_email",
+          "payer_name",
+          "referer",
+          "support_coffee_price",
+          "support_coffees",
+          "support_created_on",
+          "support_currency",
+          "support_email"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Error"
+        },
+        {
+          "status": "401",
+          "title": "Error"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getSupporterById",
+        "method": "GET",
+        "path": "/supporters/{id}",
+        "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+        "request": {
+          "method": "GET",
+          "url": "=/supporters/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "country",
+              "type": "string"
+            },
+            {
+              "name": "is_refunded",
+              "type": "boolean"
+            },
+            {
+              "name": "payer_email",
+              "type": "string"
+            },
+            {
+              "name": "payer_name",
+              "type": "string"
+            },
+            {
+              "name": "referer",
+              "type": "string"
+            },
+            {
+              "name": "support_coffee_price",
+              "type": "string"
+            },
+            {
+              "name": "support_coffees",
+              "type": "integer"
+            },
+            {
+              "name": "support_created_on",
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "name": "support_currency",
+              "type": "string"
+            },
+            {
+              "name": "support_email",
+              "type": "string"
+            },
+            {
+              "name": "support_id",
+              "type": "integer"
+            },
+            {
+              "name": "support_note",
+              "type": "string"
+            },
+            {
+              "name": "support_updated_on",
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "name": "support_visibility",
+              "type": "integer"
+            },
+            {
+              "name": "supporter_name",
+              "type": "string"
+            },
+            {
+              "name": "transaction_id",
+              "type": "string"
+            },
+            {
+              "name": "transfer_id",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "country",
+            "is_refunded",
+            "payer_email",
+            "payer_name",
+            "referer",
+            "support_coffee_price",
+            "support_coffees",
+            "support_created_on",
+            "support_currency",
+            "support_email"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Error"
+          },
+          {
+            "status": "401",
+            "title": "Error"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listSupporters",
+      "method": "GET",
+      "path": "/supporters",
+      "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "page",
+          "inputName": "page",
+          "sample": 2,
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "current_page",
+            "type": "integer"
+          },
+          {
+            "name": "data",
+            "type": "array"
+          },
+          {
+            "name": "first_page_url",
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "type": "integer"
+          },
+          {
+            "name": "last_page",
+            "type": "integer"
+          },
+          {
+            "name": "last_page_url",
+            "type": "string"
+          },
+          {
+            "name": "next_page_url",
+            "type": "string"
+          },
+          {
+            "name": "path",
+            "type": "string"
+          },
+          {
+            "name": "per_page",
+            "type": "integer"
+          },
+          {
+            "name": "prev_page_url",
+            "type": "string"
+          },
+          {
+            "name": "to",
+            "type": "integer"
+          },
+          {
+            "name": "total",
+            "type": "integer"
+          }
+        ],
+        "simplifiedFields": [
+          "current_page",
+          "first_page_url",
+          "from",
+          "last_page",
+          "last_page_url",
+          "next_page_url",
+          "path",
+          "per_page",
+          "prev_page_url",
+          "to"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Error"
+        },
+        {
+          "status": "401",
+          "title": "Error"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listSupporters",
+        "method": "GET",
+        "path": "/supporters",
+        "serverId": "documentServer1HttpsDevelopersBuymeacoffeeComApiV1",
+        "request": {
+          "method": "GET",
+          "url": "=/supporters",
+          "query": [
+            {
+              "name": "page",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "current_page",
+              "type": "integer"
+            },
+            {
+              "name": "data",
+              "type": "array"
+            },
+            {
+              "name": "first_page_url",
+              "type": "string"
+            },
+            {
+              "name": "from",
+              "type": "integer"
+            },
+            {
+              "name": "last_page",
+              "type": "integer"
+            },
+            {
+              "name": "last_page_url",
+              "type": "string"
+            },
+            {
+              "name": "next_page_url",
+              "type": "string"
+            },
+            {
+              "name": "path",
+              "type": "string"
+            },
+            {
+              "name": "per_page",
+              "type": "integer"
+            },
+            {
+              "name": "prev_page_url",
+              "type": "string"
+            },
+            {
+              "name": "to",
+              "type": "integer"
+            },
+            {
+              "name": "total",
+              "type": "integer"
+            }
+          ],
+          "simplifiedFields": [
+            "current_page",
+            "first_page_url",
+            "from",
+            "last_page",
+            "last_page_url",
+            "next_page_url",
+            "path",
+            "per_page",
+            "prev_page_url",
+            "to"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Error"
+          },
+          {
+            "status": "401",
+            "title": "Error"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    }
+  ],
+  "triggerFixtures": []
+}
